@@ -8,8 +8,5 @@ class Bike:
     def __str__(self):
         return ("Object: " + str(self.id) + " " + str(self.color)+ " " + str(self.size) + " " + str(self.brand))
 
-    def AddBike(self):
-        self.id = None
-        self.color = input("Enter color: ")
-        self.size = input("Enter size: ")
-        self.brand = input("Enter brand: ")
+
+
