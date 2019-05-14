@@ -1,22 +1,22 @@
 import pyodbc
-from Bike import *
-from BikeRepository import *
+from User import *
+from UserRepository import *
 
-class BikeRepositoryTest:
+class UserRepositoryTests:
 
     @staticmethod
-    def Should_Save_Bike():
+    def Should_Save_User():
         cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
         cursor = cnxn.cursor()
 
-        bikeRep1 = BikeRepository(cursor)
-        rower1 = Bike(None, 'red', 28, 'Giant')
+        userRep = UserRepository(cursor)
+        user = User(93061410930, 'Krzysztof', 'Orzechowski')
 
-        bikeRep1.save(rower1)
+        userRep.save(user)
 
         cnxn.commit()
 
         cursor.close()
         cnxn.close()
 
-BikeRepositoryTest.Should_Save_Bike()
+UserRepositoryTests.Should_Save_User()

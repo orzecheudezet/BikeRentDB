@@ -15,5 +15,5 @@ def createUserFromInput():
     lastName = input("Enter last name: ")
     pesel = input("Enter PESEL number: ")
 
-    user = User(firstName, lastName, pesel)
+    user = User(pesel, firstName, lastName)
     return user

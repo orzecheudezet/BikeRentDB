@@ -12,3 +12,4 @@ CREATE TABLE Users (
 PESEL char(11) NOT NULL PRIMARY KEY,
 FirstName varchar(32) NOT NULL,
 LastName varchar (32) NOT NULL);
+
