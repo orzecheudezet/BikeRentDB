@@ -17,3 +17,9 @@ def createUserFromInput():
 
     user = User(pesel, firstName, lastName)
     return user
+
+def createRentFromNput():
+    rentId = None
+    rentPerson = input("Enter PESEL number")
+    rentBike = input("Enter bike Id")
+    rentDateFrom = input()
