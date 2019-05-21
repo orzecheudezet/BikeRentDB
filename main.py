@@ -45,4 +45,17 @@ while userChoice != 'q':
         cursor.close()
         cnxn.close()
 
+    if userChoice == '4':
+        cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
+        cursor = cnxn.cursor()
+        rentId = input("Enter rent id: ")
+        rentRep = RentRepository(cursor)
+        rent = rentRep.load(rentId)
+        rentRep.update(rent)
+        cnxn.commit()
+        cursor.close()
+        cnxn.close()
+
+
+
 

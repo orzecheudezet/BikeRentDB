@@ -17,9 +17,8 @@ class RentRepositoryTests(unittest.TestCase):
 
         cnxn.commit()
 
-    @staticmethod
-    def test_Load_Rent(self, id):
 
+    def test_Load_Rent(self, id):
         cnxn = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
         cursor = cnxn.cursor()
