@@ -1,11 +1,12 @@
 import pyodbc
+import unittest
 from Bike import *
 from BikeRepository import *
 
-class BikeRepositoryTest:
+class BikeRepositoryTest(unittest.TestCase):
 
-    @staticmethod
-    def Should_Save_Bike():
+
+    def test_Save_Bike(self):
         cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
         cursor = cnxn.cursor()
 
@@ -19,4 +20,3 @@ class BikeRepositoryTest:
         cursor.close()
         cnxn.close()
 
-BikeRepositoryTest.Should_Save_Bike()
