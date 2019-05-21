@@ -1,5 +1,6 @@
 from Bike import *
 from User import *
+from Rent import *
 
 def createBikeFromInput():
     bikeId = None
@@ -20,6 +21,12 @@ def createUserFromInput():
 
 def createRentFromNput():
     rentId = None
-    rentPerson = input("Enter PESEL number")
-    rentBike = input("Enter bike Id")
-    rentDateFrom = input()
+    rentPerson = input("Enter PESEL number: ")
+    rentBike = input("Enter bike Id: ")
+    rentDateFrom = input("Enter rent date YYYY-MM-DD: ")
+    rentDateTo = input("Enter return date YYYY-MM-DD: ")
+    rentPrice = input("Enter price: ")
+    rentStatus = 0
+
+    rent = Rent(rentId, rentPerson, rentBike, rentDateFrom, rentDateTo, rentPrice, rentStatus)
+    return rent

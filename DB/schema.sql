@@ -22,4 +22,4 @@ DateTo date NOT NULL,
 Price money NOT NULL,
 [Status] bit NOT NULL);
 
-
+SELECT * FROM Rents;

@@ -1,5 +1,6 @@
 from UserRepository import *
 from BikeRepository import *
+from RentRepository import *
 from functions import *
 import pyodbc
 
@@ -10,6 +11,8 @@ userChoice = ''
 while userChoice != 'q':
     print("1. Add bike")
     print("2. Add user")
+    print("3. Rent a bike")
+    print("4. Return bike")
     userChoice = input("Enter num or q to quit: ")
 
     if userChoice == '1':
@@ -31,4 +34,15 @@ while userChoice != 'q':
         cnxn.commit()
         cursor.close()
         cnxn.close()
+
+    if userChoice == '3':
+        cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
+        cursor = cnxn.cursor()
+        rent = createRentFromNput()
+        rentRep = RentRepository(cursor)
+        rentRep.save(rent)
+        cnxn.commit()
+        cursor.close()
+        cnxn.close()
+
 

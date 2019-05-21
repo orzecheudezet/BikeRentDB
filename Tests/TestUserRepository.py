@@ -1,11 +1,12 @@
 import pyodbc
+import unittest
 from User import *
 from UserRepository import *
 
-class UserRepositoryTests:
+class UserRepositoryTests(unittest.TestCase):
 
-    @staticmethod
-    def Should_Save_User():
+
+    def test_Save_User(self):
         cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=USER-KOMPUTER\SQLEXPRESS;DATABASE=BikeRents;Trusted_Connection=yes')
         cursor = cnxn.cursor()
 
@@ -19,4 +20,3 @@ class UserRepositoryTests:
         cursor.close()
         cnxn.close()
 
-UserRepositoryTests.Should_Save_User()
